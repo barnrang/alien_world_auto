@@ -9,6 +9,9 @@ from selenium.webdriver.support import expected_conditions as EC
 
 import matplotlib.pyplot as plt
 
+driver = selenium.webdriver.Chrome()  # Optional argument, if not specified will search path.
+driver.get('https://play.alienworlds.io/')
+
 canvas = driver.find_element_by_id('unityContainer')
 style_element = [x.strip() for x in canvas.get_attribute('style').split(';')]
 width = int(style_element[0].split(' ')[-1][:-2])
@@ -46,8 +49,6 @@ mining_pos = (510, 600)
 claim_pos = (510, 400)
 return_to_mining_pos = (200, 560)
 
-driver = webdriver.Chrome()  # Optional argument, if not specified will search path.
-driver.get('https://play.alienworlds.io/')
 print('Please login and enter the page before press mining')
 print('Enter "y" and press enter if ready: ')
 while input() != 'y':

@@ -1,0 +1,4 @@
+notebook
+selenium
+numpy
+matplotlib
